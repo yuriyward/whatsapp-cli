@@ -1,0 +1,32 @@
+{
+  "name": "whatsapp-cli",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Personal WhatsApp account CLI for AI agents, over a pinned wacli.",
+  "type": "module",
+  "bin": {
+    "whatsapp-cli": "./src/main.ts"
+  },
+  "scripts": {
+    "start": "bun src/main.ts",
+    "typecheck": "tsc --noEmit",
+    "test": "bun test",
+    "check": "bun run typecheck && bun run test",
+    "lint": "oxlint --type-aware --deny-warnings",
+    "format": "oxfmt --write .",
+    "format:check": "oxfmt --check .",
+    "fix": "oxlint --type-aware --fix && oxfmt --write .",
+    "dup": "jscpd src --threshold 0 --min-lines 5 --min-tokens 80 --ignore '**/__tests__/**,**/*.d.ts'"
+  },
+  "devDependencies": {
+    "@types/bun": "1.4.1",
+    "typescript": "7.0.2",
+    "jscpd": "5.3.0",
+    "oxfmt": "0.66.0",
+    "oxlint": "1.81.0",
+    "oxlint-plugin-complexity": "2.1.8",
+    "oxlint-tsgolint": "7.0.2001",
+    "ultracite": "7.10.8"
+  },
+  "license": "AGPL-3.0-or-later"
+}
